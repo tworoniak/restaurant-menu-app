@@ -1,9 +1,10 @@
 // src/app/App.tsx
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { SLIDES } from './slides';
 import AppShell from '../components/AppShell/AppShell';
 import SlideViewport from '../components/SlideViewport/SlideViewport';
 import BottomNav from '../components/BottomNav/BottomNav';
+import { useSwipeNavigation } from '../hooks/useSwipeNavigation';
 
 const STORAGE_KEY = 'activeSlideId';
 
@@ -19,15 +20,37 @@ export default function App() {
     localStorage.setItem(STORAGE_KEY, activeId);
   }, [activeId]);
 
-  const activeSlide = useMemo(
-    () => SLIDES.find((s) => s.id === activeId) ?? SLIDES[0],
+  const activeIndex = useMemo(
+    () =>
+      Math.max(
+        0,
+        SLIDES.findIndex((s) => s.id === activeId),
+      ),
     [activeId],
   );
+
+  const activeSlide = SLIDES[activeIndex] ?? SLIDES[0];
+
+  const goNext = useCallback(() => {
+    const next = SLIDES[activeIndex + 1];
+    if (next) setActiveId(next.id);
+  }, [activeIndex]);
+
+  const goPrev = useCallback(() => {
+    const prev = SLIDES[activeIndex - 1];
+    if (prev) setActiveId(prev.id);
+  }, [activeIndex]);
+
+  // Swipe left -> next tab, swipe right -> previous tab
+  const swipeHandlers = useSwipeNavigation(goNext, goPrev, {
+    thresholdPx: 55,
+    restraintPx: 70,
+  });
 
   return (
     <AppShell
       content={
-        <SlideViewport title={activeSlide.label}>
+        <SlideViewport title={activeSlide.label} swipeHandlers={swipeHandlers}>
           {activeSlide.element}
         </SlideViewport>
       }

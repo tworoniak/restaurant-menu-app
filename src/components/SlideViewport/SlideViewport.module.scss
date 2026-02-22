@@ -23,6 +23,8 @@
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 
-  padding: 0 16px 96px; /* bottom padding so content doesn't hide behind nav */
-  /* If your nav height changes, tweak this */
+  padding: 0 16px 96px;
+
+  /* Allow vertical scrolling; we'll detect horizontal swipes */
+  touch-action: pan-y;
 }
