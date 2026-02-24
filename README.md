@@ -15,7 +15,7 @@ Designed as a demonstration of advanced touch UX patterns, gesture handling, lay
 
 ## 🚀 Live Demo
 
-https://swiper-app-v1.vercel.app
+https://restaurant-menu-app-mu.vercel.app
 
 ---
 
