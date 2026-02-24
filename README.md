@@ -1,4 +1,4 @@
-# 📱 SwipeNav – Mobile-First Gesture-Driven React App
+# 📱 Restaurant SwipeNav – Mobile-First Gesture-Driven React App
 
 A mobile-first informational web application built with React + TypeScript + Vite + Sass, featuring a custom-built swipe carousel system with native-feeling gesture behavior.
 
