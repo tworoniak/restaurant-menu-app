@@ -1,9 +1,5 @@
-// src/app/slides.tsx
 import type { ReactNode } from 'react';
-import Home from '../slides/Home';
-import Info from '../slides/Info';
-import FAQ from '../slides/FAQ';
-import Contact from '../slides/Contact';
+import Menu from '../slides/Menu';
 
 export type SlideDef = {
   id: string;
@@ -12,8 +8,9 @@ export type SlideDef = {
 };
 
 export const SLIDES: SlideDef[] = [
-  { id: 'home', label: 'Home', element: <Home /> },
-  { id: 'info', label: 'Info', element: <Info /> },
-  { id: 'faq', label: 'FAQ', element: <FAQ /> },
-  { id: 'contact', label: 'Contact', element: <Contact /> },
+  { id: 'menu', label: 'Menu', element: <Menu /> },
+  // Add these next:
+  // { id: "specials", label: "Specials", element: <Specials /> },
+  // { id: "hours", label: "Hours", element: <HoursLocation /> },
+  // { id: "order", label: "Order", element: <Order /> },
 ];
