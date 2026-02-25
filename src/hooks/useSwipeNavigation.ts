@@ -42,6 +42,7 @@ export function useSwipeNavigation(
   };
 
   const onPointerDown = useCallback((e: React.PointerEvent) => {
+    if (e.pointerType === 'mouse') return;
     if (!e.isPrimary) return;
     tracking.current = true;
     startX.current = e.clientX;
@@ -50,6 +51,7 @@ export function useSwipeNavigation(
   }, []);
 
   const onPointerMove = useCallback((e: React.PointerEvent) => {
+    if (e.pointerType === 'mouse') return;
     if (!tracking.current || startX.current == null || startY.current == null)
       return;
 
@@ -65,6 +67,8 @@ export function useSwipeNavigation(
 
   const onPointerUp = useCallback(
     (e: React.PointerEvent) => {
+      if (e.pointerType === 'mouse') return;
+
       if (!tracking.current || startX.current == null || startY.current == null)
         return;
 
