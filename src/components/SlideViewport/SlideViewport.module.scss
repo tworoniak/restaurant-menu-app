@@ -24,6 +24,41 @@
 
   /* Allows vertical scrolling; we interpret horizontal swipes */
   touch-action: pan-y;
+
+  scrollbar-gutter: auto;
+
+  // Firefox (still limited, but we can make it subtle)
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+
+  // Chrome / Edge / Safari
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 999px;
+    transition: background 0.25s ease;
+  }
+
+  // Reveal scrollbar only on hover/focus
+  &:hover,
+  &:focus-within {
+    scrollbar-color: var(--color-scrollbar-thumb) transparent;
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--color-scrollbar-thumb);
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: var(--color-scrollbar-thumb-hover);
+    }
+  }
 }
 
 .slide {
