@@ -32,6 +32,17 @@ export const MENU_ITEMS: MenuItem[] = [
     image: { src: '/images/nachos.jpg', alt: 'Nachos' },
   },
   {
+    id: 'app-fries',
+    categoryId: 'appetizers',
+    name: 'French Fries',
+    description: 'French fried potatoes.',
+    price: usd(550),
+    tags: ['V'],
+    allergens: ['dairy'],
+    spicy: 1,
+    image: { src: '/images/fries.jpg', alt: 'French Fries' },
+  },
+  {
     id: 'app-street-corn',
     categoryId: 'appetizers',
     name: 'Street Corn Cup',
@@ -61,6 +72,7 @@ export const MENU_ITEMS: MenuItem[] = [
     allergens: ['dairy'],
     spicy: 2,
     featured: true,
+    image: { src: '/images/birria-tacos.jpg', alt: 'Birria Tacos' },
   },
   {
     id: 'taco-cauliflower',
@@ -105,6 +117,10 @@ export const MENU_ITEMS: MenuItem[] = [
     tags: ['V'],
     allergens: ['gluten', 'egg'],
     spicy: 1,
+    image: {
+      src: '/images/veggie-burger.jpg',
+      alt: 'Black Bean Veggie Burger',
+    },
   },
 
   // Drinks
