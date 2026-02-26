@@ -12,6 +12,8 @@
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 1.8rem; //18px 18px 0 0;
   padding: 10px 16px calc(16px + env(safe-area-inset-bottom));
+  margin: 0 auto;
+  width: 75%;
 }
 
 .grabber {
