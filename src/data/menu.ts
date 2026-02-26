@@ -17,6 +17,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'House tortilla chips, roasted tomato salsa, lime.',
     price: usd(700),
     tags: ['V', 'GF', 'DF'],
+    image: { src: '/images/chips-salsa.jpg', alt: 'Chips and salsa' },
   },
   {
     id: 'app-queso',
@@ -28,6 +29,7 @@ export const MENU_ITEMS: MenuItem[] = [
     allergens: ['dairy'],
     spicy: 1,
     featured: true,
+    image: { src: '/images/nachos.jpg', alt: 'Nachos' },
   },
   {
     id: 'app-street-corn',
@@ -38,6 +40,7 @@ export const MENU_ITEMS: MenuItem[] = [
     tags: ['V', 'GF'],
     allergens: ['dairy'],
     spicy: 1,
+    image: { src: '/images/street-corn.jpg', alt: 'Nachos' },
   },
 
   // Tacos
@@ -80,15 +83,17 @@ export const MENU_ITEMS: MenuItem[] = [
     price: usd(1400),
     allergens: ['dairy', 'gluten'],
     featured: true,
+    image: { src: '/images/smash-burger.jpg', alt: 'Classic Smash Burger' },
   },
   {
-    id: 'burger-jalapeno',
+    id: 'burger-chicken',
     categoryId: 'burgers',
-    name: 'Jalapeño Ranch Burger',
-    description: 'Pepper jack, jalapeño, crispy onions, ranch, pickles.',
+    name: 'Spicy Chicken Sandwich',
+    description: 'Pepper jack, jalapeño, crispy onions, spicy ranch, pickles.',
     price: usd(1550),
     allergens: ['dairy', 'gluten', 'egg'],
     spicy: 2,
+    image: { src: '/images/spicy-chicken.jpg', alt: 'Spicy Chicken Sandwich' },
   },
   {
     id: 'burger-veggie',
@@ -126,6 +131,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Tequila, lime, orange, salt (or tajín).',
     price: usd(1200),
     tags: ['V', 'GF', 'DF'],
+    image: { src: '/images/margarita.jpg', alt: 'Margarita' },
   },
 ];
 

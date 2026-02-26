@@ -1,14 +1,14 @@
 .backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: var(--olive-leaf);
   display: grid;
   align-items: end;
   z-index: 50;
 }
 
 .sheet {
-  background: rgba(15, 15, 18, 0.98);
+  background: var(--black-forest);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 18px 18px 0 0;
   padding: 10px 16px calc(16px + env(safe-area-inset-bottom));
@@ -40,6 +40,8 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(255, 255, 255, 0.06);
   color: inherit;
+
+  cursor: pointer;
 
   &:active {
     transform: translateY(1px);

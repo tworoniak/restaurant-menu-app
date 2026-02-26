@@ -13,6 +13,12 @@ export type Money = {
   currency: 'USD';
 };
 
+export type MenuItemImage = {
+  src: string; // URL or imported asset string
+  alt: string;
+  aspect?: '1:1' | '4:3' | '16:9';
+};
+
 export type MenuItem = {
   id: string;
   categoryId: MenuCategoryId;
@@ -23,6 +29,7 @@ export type MenuItem = {
   allergens?: string[];
   spicy?: 0 | 1 | 2 | 3;
   featured?: boolean;
+  image?: MenuItemImage;
 };
 
 export type Special = {

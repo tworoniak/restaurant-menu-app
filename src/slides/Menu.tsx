@@ -52,6 +52,14 @@ export default function Menu() {
               </p>
             ) : null}
 
+            {selected.image ? (
+              <img
+                src={selected.image.src}
+                alt={selected.image.alt}
+                className={styles.sheetImage}
+              />
+            ) : null}
+
             {selected.tags?.length ? (
               <p className={styles.meta}>
                 <strong>Tags:</strong> {selected.tags.join(', ')}
