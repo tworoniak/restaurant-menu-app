@@ -3,14 +3,14 @@
   inset: 0;
   background: var(--olive-leaf);
   display: grid;
-  align-items: end;
+  align-items: start;
   z-index: 50;
 }
 
 .sheet {
   background: var(--black-forest);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 18px 18px 0 0;
+  border-radius: 1.8rem; //18px 18px 0 0;
   padding: 10px 16px calc(16px + env(safe-area-inset-bottom));
 }
 
@@ -46,4 +46,10 @@
   &:active {
     transform: translateY(1px);
   }
+}
+
+.footer {
+  margin-top: 12px;
+  display: grid;
+  gap: 10px;
 }

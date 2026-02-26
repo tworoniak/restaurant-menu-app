@@ -5,10 +5,17 @@ type Props = {
   open: boolean;
   title?: string;
   children: React.ReactNode;
+  footer?: React.ReactNode;
   onClose: () => void;
 };
 
-export default function BottomSheet({ open, title, children, onClose }: Props) {
+export default function BottomSheet({
+  open,
+  title,
+  children,
+  footer,
+  onClose,
+}: Props) {
   useEffect(() => {
     if (!open) return;
     const onKeyDown = (e: KeyboardEvent) => {
@@ -29,8 +36,12 @@ export default function BottomSheet({ open, title, children, onClose }: Props) {
     >
       <div className={styles.sheet} onClick={(e) => e.stopPropagation()}>
         <div className={styles.grabber} aria-hidden='true' />
+
         {title ? <h2 className={styles.title}>{title}</h2> : null}
+
         <div className={styles.body}>{children}</div>
+
+        {footer ? <div className={styles.footer}>{footer}</div> : null}
 
         <button type='button' className={styles.close} onClick={onClose}>
           Close
