@@ -1,0 +1,73 @@
+@use '../styles/abstracts' as *;
+
+.wrap {
+  display: grid;
+  gap: 12px;
+}
+
+.filters {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  gap: 8px;
+  padding: 10px 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  background: var(--olive-leaf);
+  backdrop-filter: blur(10px);
+}
+
+.chip {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--black-forest);
+  color: rgba(244, 244, 245, 0.9);
+  padding: 10px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+  min-height: 40px;
+
+  touch-action: manipulation;
+
+  cursor: pointer;
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &:hover {
+    border-color: var(--sunlit-clay);
+    background: var(--copperwood);
+  }
+}
+
+.active {
+  border-color: var(--sunlit-clay);
+  background: var(--copperwood);
+}
+
+.list {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+
+  @include respond($bp-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond($bp-xl) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.sheetDesc {
+  margin: 0;
+  opacity: 0.9;
+  line-height: 1.45;
+}
+
+.meta {
+  margin: 0;
+  opacity: 0.85;
+}

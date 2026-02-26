@@ -2,6 +2,14 @@ export type DietaryTag = 'V' | 'VG' | 'GF' | 'DF' | 'NF';
 
 export type MenuCategoryId = 'appetizers' | 'tacos' | 'burgers' | 'drinks';
 
+export type DrinkType =
+  | 'cocktail'
+  | 'beer'
+  | 'wine'
+  | 'na'
+  | 'coffee'
+  | 'other';
+
 export type MenuCategory = {
   id: MenuCategoryId;
   label: string;
@@ -30,6 +38,7 @@ export type MenuItem = {
   spicy?: 0 | 1 | 2 | 3;
   featured?: boolean;
   image?: MenuItemImage;
+  drinkType?: DrinkType; // only used when categoryId === "drinks"
 };
 
 export type Special = {

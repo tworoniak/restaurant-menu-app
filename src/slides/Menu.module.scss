@@ -1,3 +1,5 @@
+@use '../styles/abstracts' as *;
+
 .wrap {
   display: grid;
   gap: 12px;
@@ -6,7 +8,15 @@
 .list {
   display: grid;
   gap: 12px;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
+
+  @include respond($bp-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond($bp-xl) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .sheetDesc {
