@@ -3,7 +3,8 @@ import { CATEGORIES, MENU_ITEMS } from '../data/menu';
 import type { MenuCategoryId, MenuItem } from '../types/menu';
 import CategoryChips from '../components/menu/CategoryChips';
 import MenuCard from '../components/menu/MenuCard';
-import BottomSheet from '../components/ui/BottomSheet';
+// import BottomSheet from '../components/ui/BottomSheet';
+import MenuItemSheet from '../components/menu/MenuItemSheet';
 
 import styles from './Menu.module.scss';
 
@@ -37,37 +38,12 @@ export default function Menu() {
         ))}
       </div>
 
-      <BottomSheet
+      <MenuItemSheet
         open={!!selected}
-        title={selected?.name}
+        item={selected}
         onClose={() => setSelected(null)}
-      >
-        {selected ? (
-          <>
-            <p className={styles.sheetDesc}>{selected.description}</p>
-
-            {selected.allergens?.length ? (
-              <p className={styles.meta}>
-                <strong>Allergens:</strong> {selected.allergens.join(', ')}
-              </p>
-            ) : null}
-
-            {selected.image ? (
-              <img
-                src={selected.image.src}
-                alt={selected.image.alt}
-                className={styles.sheetImage}
-              />
-            ) : null}
-
-            {selected.tags?.length ? (
-              <p className={styles.meta}>
-                <strong>Tags:</strong> {selected.tags.join(', ')}
-              </p>
-            ) : null}
-          </>
-        ) : null}
-      </BottomSheet>
+        orderHref='https://example.com/order'
+      />
     </div>
   );
 }

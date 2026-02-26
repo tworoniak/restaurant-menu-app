@@ -1,9 +1,10 @@
 import { useMemo, useState } from 'react';
 import { MENU_ITEMS } from '../data/menu';
 import type { DrinkType, MenuItem } from '../types/menu';
-import BottomSheet from '../components/ui/BottomSheet';
+// import BottomSheet from '../components/ui/BottomSheet';
 import MenuCard from '../components/menu/MenuCard';
 import styles from './Drinks.module.scss';
+import MenuItemSheet from '../components/menu/MenuItemSheet';
 
 type Filter = 'all' | DrinkType;
 
@@ -55,46 +56,12 @@ export default function Drinks() {
         ))}
       </div>
 
-      <BottomSheet
+      <MenuItemSheet
         open={!!selected}
-        title={selected?.name}
+        item={selected}
         onClose={() => setSelected(null)}
-      >
-        {selected ? (
-          <>
-            <p className={styles.sheetDesc}>{selected.description}</p>
-
-            {selected.drinkType ? (
-              <p className={styles.meta}>
-                <strong>Type:</strong> {labelDrinkType(selected.drinkType)}
-              </p>
-            ) : null}
-
-            {selected.tags?.length ? (
-              <p className={styles.meta}>
-                <strong>Tags:</strong> {selected.tags.join(', ')}
-              </p>
-            ) : null}
-          </>
-        ) : null}
-      </BottomSheet>
+        orderHref='https://example.com/order'
+      />
     </div>
   );
-}
-
-function labelDrinkType(t: DrinkType) {
-  switch (t) {
-    case 'cocktail':
-      return 'Cocktail';
-    case 'na':
-      return 'Non-Alcoholic';
-    case 'beer':
-      return 'Beer';
-    case 'wine':
-      return 'Wine';
-    case 'coffee':
-      return 'Coffee';
-    default:
-      return 'Other';
-  }
 }
