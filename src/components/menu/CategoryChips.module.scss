@@ -8,13 +8,13 @@
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 
-  background: rgba(11, 11, 12, 0.92);
+  background: var(--olive-leaf);
   backdrop-filter: blur(10px);
 }
 
 .chip {
   border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--black-forest);
   color: rgba(244, 244, 245, 0.9);
 
   padding: 10px 12px;
@@ -22,12 +22,19 @@
   white-space: nowrap;
   min-height: 40px;
 
+  cursor: pointer;
+
   &:active {
     transform: translateY(1px);
+  }
+
+  &:hover {
+    border-color: var(--sunlit-clay);
+    background: var(--copperwood);
   }
 }
 
 .active {
-  border-color: rgba(255, 255, 255, 0.24);
-  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--sunlit-clay);
+  background: var(--copperwood);
 }

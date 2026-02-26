@@ -6,6 +6,7 @@
 .list {
   display: grid;
   gap: 12px;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .sheetDesc {
@@ -17,4 +18,12 @@
 .meta {
   margin: 0;
   opacity: 0.85;
+}
+
+.sheetImage {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  object-fit: cover;
+  max-height: 220px;
 }
