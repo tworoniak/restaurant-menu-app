@@ -10,7 +10,7 @@
 .tab {
   appearance: none;
   border: 0;
-  background: transparent;
+  background: var(--black-forest);
   color: var(--color-text);
 
   min-height: 48px; /* touch target */
@@ -32,7 +32,7 @@
 }
 
 .active {
-  background: var(--black-forest);
+  background: var(--olive-leaf);
   color: var(--color-text);
 }
 

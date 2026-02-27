@@ -5,6 +5,9 @@ export const CATEGORIES: MenuCategory[] = [
   { id: 'appetizers', label: 'Appetizers', sortOrder: 1 },
   { id: 'tacos', label: 'Tacos', sortOrder: 2 },
   { id: 'burgers', label: 'Burgers', sortOrder: 3 },
+  { id: 'sandwiches', label: 'Sandwiches', sortOrder: 4 },
+  { id: 'soups', label: 'Soups', sortOrder: 5 },
+
   // { id: 'drinks', label: 'Drinks', sortOrder: 4 },
 ];
 
@@ -98,14 +101,15 @@ export const MENU_ITEMS: MenuItem[] = [
     image: { src: '/images/smash-burger.jpg', alt: 'Classic Smash Burger' },
   },
   {
-    id: 'burger-chicken',
+    id: 'burger-avocado',
     categoryId: 'burgers',
-    name: 'Spicy Chicken Sandwich',
-    description: 'Pepper jack, jalapeño, crispy onions, spicy ranch, pickles.',
-    price: usd(1550),
-    allergens: ['dairy', 'gluten', 'egg'],
-    spicy: 2,
-    image: { src: '/images/spicy-chicken.jpg', alt: 'Spicy Chicken Sandwich' },
+    name: 'Avocado Burger',
+    description:
+      '1/2 lb patty, avocado spread, monterey jack, thick-cut bacon, avocado ranch, standard side.',
+    price: usd(1400),
+    allergens: ['dairy', 'gluten'],
+    featured: true,
+    image: { src: '/images/avocado-burger.jpg', alt: 'Avocado Burger' },
   },
   {
     id: 'burger-veggie',
@@ -120,6 +124,57 @@ export const MENU_ITEMS: MenuItem[] = [
     image: {
       src: '/images/veggie-burger.jpg',
       alt: 'Black Bean Veggie Burger',
+    },
+  },
+
+  // Sandwiches
+  {
+    id: 'burger-chicken',
+    categoryId: 'sandwiches',
+    name: 'Spicy Chicken Sandwich',
+    description: 'Pepper jack, jalapeño, crispy onions, spicy ranch, pickles.',
+    price: usd(1550),
+    allergens: ['dairy', 'gluten', 'egg'],
+    spicy: 2,
+    image: { src: '/images/spicy-chicken.jpg', alt: 'Spicy Chicken Sandwich' },
+  },
+
+  // Soups
+
+  {
+    id: 'soup-potato',
+    categoryId: 'soups',
+    name: 'Potato Soup',
+    description: 'Bacon, scallion, cheddar, fresh baked croutons.',
+    price: usd(1550),
+    allergens: ['dairy', 'gluten'],
+    spicy: 2,
+    image: { src: '/images/potato-soup.jpg', alt: 'Potato Soup' },
+  },
+  {
+    id: 'soup-spicy-chicken',
+    categoryId: 'soups',
+    name: 'Chicken Tortilla Soup',
+    description: 'Chicken, tortilla strips, sour cream, cheddar.',
+    price: usd(1550),
+    allergens: ['dairy', 'gluten'],
+    spicy: 2,
+    image: {
+      src: '/images/chicken-tortilla-soup.jpg',
+      alt: 'Chicken Tortilla Soup',
+    },
+  },
+  {
+    id: 'soup-beef-chili',
+    categoryId: 'soups',
+    name: 'Beef Chili',
+    description: 'Beef, peppers, onions, cheese, sour cream.',
+    price: usd(1550),
+    allergens: ['dairy', 'gluten'],
+    spicy: 2,
+    image: {
+      src: '/images/beef-chili.jpg',
+      alt: 'Beef Chili',
     },
   },
 
