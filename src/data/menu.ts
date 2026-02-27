@@ -46,6 +46,17 @@ export const MENU_ITEMS: MenuItem[] = [
     image: { src: '/images/fries.jpg', alt: 'French Fries' },
   },
   {
+    id: 'app-wings',
+    categoryId: 'appetizers',
+    name: 'Buffalo Wings',
+    description: 'Spicy chicken wings tossed in buffalo sauce.',
+    price: usd(550),
+    tags: [],
+    allergens: [],
+    spicy: 1,
+    image: { src: '/images/buffalo-wings.jpg', alt: 'Buffalo Wings' },
+  },
+  {
     id: 'app-street-corn',
     categoryId: 'appetizers',
     name: 'Street Corn Cup',
