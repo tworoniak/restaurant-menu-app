@@ -15,7 +15,7 @@ Designed as a demonstration of advanced touch UX patterns, gesture handling, lay
 
 ## 🚀 Live Demo
 
-**[Restaurant SwipeNav]** (https://restaurant-menu-app-mu.vercel.app)
+[Restaurant SwipeNav](https://restaurant-menu-app-mu.vercel.app)
 
 ---
 
