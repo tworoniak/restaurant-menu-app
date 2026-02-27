@@ -15,25 +15,25 @@ export default function MenuItemSheet({
   open,
   item,
   onClose,
-  orderHref,
+  // orderHref,
 }: Props) {
   return (
     <BottomSheet
       open={open}
       title={item?.name}
       onClose={onClose}
-      footer={
-        orderHref ? (
-          <a
-            className={styles.cta}
-            href={orderHref}
-            target='_blank'
-            rel='noreferrer'
-          >
-            Order Online
-          </a>
-        ) : null
-      }
+      // footer={
+      //   orderHref ? (
+      //     <a
+      //       className={styles.cta}
+      //       href={orderHref}
+      //       target='_blank'
+      //       rel='noreferrer'
+      //     >
+      //       Order Online
+      //     </a>
+      //   ) : null
+      // }
     >
       {item ? (
         <div className={styles.grid}>
