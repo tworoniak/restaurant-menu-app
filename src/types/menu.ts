@@ -1,6 +1,12 @@
 export type DietaryTag = 'V' | 'VG' | 'GF' | 'DF' | 'NF';
 
-export type MenuCategoryId = 'appetizers' | 'tacos' | 'burgers' | 'drinks';
+export type MenuCategoryId =
+  | 'appetizers'
+  | 'tacos'
+  | 'burgers'
+  | 'sandwiches'
+  | 'soups'
+  | 'drinks';
 
 export type DrinkType =
   | 'cocktail'
