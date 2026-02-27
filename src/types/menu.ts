@@ -6,6 +6,7 @@ export type MenuCategoryId =
   | 'burgers'
   | 'sandwiches'
   | 'soups'
+  | 'salads'
   | 'drinks';
 
 export type DrinkType =
