@@ -1,6 +1,8 @@
 // src/components/SlideViewport/SlideViewport.tsx
 import styles from './SlideViewport.module.scss';
 import type { ReactNode } from 'react';
+// import ScrollToTop from '../ui/ScrollToTop';
+// import ScrollToTopButton from '../ui/ScrollToTopButton';
 
 type SwipeHandlers = {
   onPointerDown: (e: React.PointerEvent) => void;
@@ -38,6 +40,7 @@ export default function SlideViewport({
 
   return (
     <section className={styles.viewport} aria-label={title}>
+      {/* <ScrollToTop /> */}
       <header className={styles.header}>
         <h1 className={styles.title}>{title}</h1>
       </header>
@@ -48,6 +51,7 @@ export default function SlideViewport({
           {children}
         </div>
       </div>
+      {/* <ScrollToTopButton /> */}
     </section>
   );
 }

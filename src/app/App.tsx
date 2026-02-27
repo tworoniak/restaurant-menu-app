@@ -4,6 +4,7 @@ import { SLIDES } from './slides';
 import AppShell from '../components/AppShell/AppShell';
 import SlideViewport from '../components/SlideViewport/SlideViewport';
 import BottomNav from '../components/BottomNav/BottomNav';
+
 import { useSwipeNavigation } from '../hooks/useSwipeNavigation';
 
 const STORAGE_KEY = 'activeSlideId';
@@ -77,29 +78,31 @@ export default function App() {
   });
 
   return (
-    <AppShell
-      content={
-        <SlideViewport
-          title={activeSlide.label}
-          swipeHandlers={swipeHandlers}
-          transitionKey={activeSlide.id}
-          direction={dir}
-          bump={bump}
-        >
-          {activeSlide.element}
-        </SlideViewport>
-      }
-      nav={
-        <BottomNav
-          slides={SLIDES}
-          activeId={activeId}
-          onChange={(id) => {
-            const nextIdx = SLIDES.findIndex((s) => s.id === id);
-            setDir(nextIdx >= activeIndex ? 'next' : 'prev');
-            setActiveId(id);
-          }}
-        />
-      }
-    />
+    <>
+      <AppShell
+        content={
+          <SlideViewport
+            title={activeSlide.label}
+            swipeHandlers={swipeHandlers}
+            transitionKey={activeSlide.id}
+            direction={dir}
+            bump={bump}
+          >
+            {activeSlide.element}
+          </SlideViewport>
+        }
+        nav={
+          <BottomNav
+            slides={SLIDES}
+            activeId={activeId}
+            onChange={(id) => {
+              const nextIdx = SLIDES.findIndex((s) => s.id === id);
+              setDir(nextIdx >= activeIndex ? 'next' : 'prev');
+              setActiveId(id);
+            }}
+          />
+        }
+      />
+    </>
   );
 }
